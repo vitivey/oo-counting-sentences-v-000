@@ -32,7 +32,7 @@ class String
     end
   text_array.delete("")
   puts "#{text_array.size}"
-  
+
   end
 
 end
