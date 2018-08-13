@@ -32,11 +32,7 @@ class String
     end
   text_array.delete("")
   puts "#{text_array.size}"
-
-end
-count_sentences(text_array)
-
-    
+  
   end
 
 end
