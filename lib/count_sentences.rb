@@ -15,21 +15,28 @@ class String
   end
 
   def count_sentences
-    period_array = self.split(".")
-    period_array.each do |sentences|
-      if sentences.include?("!")
-            sentences.split("!").map do |blanks|
-            period_array << blanks if !blanks.empty?
-            end
-      elsif sentences.include?("?")
-            sentences.split("?").map do |blanks|
-            period_array << blanks if !blanks.empty?
-            end
-      else
-        return period_array.size
+    text_array=self.split(".")
+    while text_array.join.include?("!") || text_array.join.include?("?") || text_array.join.include?(".")
+    text_array.each do |sentences|
+        if sentences.include?("!")
+          text_array << sentences.split("!")
+          text_array.delete(sentences)
+          text_array = text_array.flatten
+        elsif sentences.include?("?")
+          text_array << sentences.split("?")
+          text_array.delete(sentences)
+          text_array = text_array.flatten
+        else
+        end
       end
-      # period_array.size
-    # binding.pry
     end
+  text_array.delete("")
+  puts "#{text_array.size}"
+
 end
+count_sentences(text_array)
+
+    
+  end
+
 end
