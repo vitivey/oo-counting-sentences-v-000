@@ -15,9 +15,22 @@ class String
   end
 
   def count_sentences
-    a = self.split(".")
-    b = a.split("!")
-    c = b.split("?")
+    period_array = self.split(".")
+    period_array.map do |sentences|
+      if sentences.include?("!")
+        sentences.split("!").map do |blanks|
+          if !blanks.empty?
+            period_array << blanks
+          end
+        end
+      elsif sentences.include?("?")
+        sentences.split("?").map do |blanks|
+          if !blanks.empty?
+            period_array << blanks
+          end
+        end
+      end
+      period_array.size
     binding.pry
   end
 
