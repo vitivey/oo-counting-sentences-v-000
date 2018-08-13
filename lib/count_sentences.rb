@@ -32,6 +32,5 @@ class String
       end
       period_array.size
     binding.pry
-  end
-
+    end
 end
