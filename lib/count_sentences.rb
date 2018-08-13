@@ -31,7 +31,7 @@ class String
       end
     end
   text_array.delete("")
-  puts "#{text_array.size}"
+  text_array.size}
 
   end
 
