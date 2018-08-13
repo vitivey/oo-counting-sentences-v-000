@@ -20,5 +20,5 @@ class String
     c = b.split("?")
     binding.pry
   end
-  
+
 end
