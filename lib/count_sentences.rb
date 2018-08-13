@@ -16,7 +16,7 @@ class String
 
   def count_sentences
     period_array = self.split(".")
-    period_array.map do |sentences|
+    period_array.each do |sentences|
       if sentences.include?("!")
         sentences.split("!").map do |blanks|
           if !blanks.empty?
@@ -29,8 +29,10 @@ class String
             period_array << blanks
           end
         end
+      else
+        return period_array.size
       end
-      period_array.size
+      # period_array.size
     # binding.pry
     end
 end
