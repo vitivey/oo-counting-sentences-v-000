@@ -18,17 +18,13 @@ class String
     period_array = self.split(".")
     period_array.each do |sentences|
       if sentences.include?("!")
-        sentences.split("!").map do |blanks|
-          if !blanks.empty?
-            period_array << blanks
-          end
-        end
+            sentences.split("!").map do |blanks|
+            period_array << blanks if !blanks.empty?
+            end
       elsif sentences.include?("?")
-        sentences.split("?").map do |blanks|
-          if !blanks.empty?
-            period_array << blanks
-          end
-        end
+            sentences.split("?").map do |blanks|
+            period_array << blanks if !blanks.empty?
+            end
       else
         return period_array.size
       end
