@@ -18,5 +18,6 @@ class String
     a = self.split(".")
     b = a.split("!")
     c = b.split("?")
+    binding.pry
   end
 end
